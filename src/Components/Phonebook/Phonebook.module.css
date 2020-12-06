@@ -1,0 +1,37 @@
+.title {
+  margin: 20px 0;
+}
+
+.container {
+  padding: 20px;
+  width: 280px;
+  height: 140px;
+
+  border: 3px solid black;
+  border-radius: 4px;
+}
+
+.textInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput {
+  margin: 10px 0;
+}
+
+.formInput_phone {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.addButton {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.addButton:hover {
+  background-color: burlywood;
+  border: solid 1px transparent;
+  cursor: pointer;
+}

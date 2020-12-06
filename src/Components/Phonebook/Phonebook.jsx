@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import s from './Phonebook.module.css';
 
 class Phonebook extends Component {
   state = {
@@ -60,10 +61,10 @@ class Phonebook extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <>
-        <h2>{this.props.title}</h2>
-        <form onSubmit={this.handeleSubmit}>
-          <label>
+      <div>
+        <h2 className={s.title}>{this.props.title}</h2>
+        <form onSubmit={this.handeleSubmit} className={s.container}>
+          <label className={s.textInput}>
             Name
             <input
               type="text"
@@ -71,9 +72,10 @@ class Phonebook extends Component {
               name="name"
               placeholder="Rosie Simpson"
               onChange={this.handeleChange}
+              className={s.formInput}
             />
           </label>
-          <label>
+          <label className={s.textInput}>
             Number
             <input
               type="number"
@@ -81,11 +83,14 @@ class Phonebook extends Component {
               name="number"
               placeholder="459-12-56"
               onChange={this.handeleChange}
+              className={s.formInput_phone}
             />
           </label>
-          <button type="submit">Add contact</button>
+          <button type="submit" className={s.addButton}>
+            Add contact
+          </button>
         </form>
-      </>
+      </div>
     );
   }
 }

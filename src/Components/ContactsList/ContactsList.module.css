@@ -1,0 +1,28 @@
+.list {
+  margin: 0;
+  width: 280px;
+  height: 140px;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.contact:last-child {
+  margin-bottom: 0;
+}
+
+.deleteButton {
+  margin-left: 20px;
+  /* padding: 5px; */
+  width: 50px;
+  border-radius: 4px;
+}
+
+.deleteButton:hover {
+  background-color: burlywood;
+  border: solid 1px transparent;
+  cursor: pointer;
+}

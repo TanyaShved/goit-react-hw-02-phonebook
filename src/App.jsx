@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Pnonebook from './Components/Phonebook/Phonebook';
 import Contacts from './Components/Contacts/Contacts';
 import Filter from './Components/Filter/Filter';
+import ContactsList from './Components/ContactsList/ContactsList';
 
 class App extends Component {
   state = {
@@ -32,7 +33,7 @@ class App extends Component {
     this.setState({ filter: e.currentTarget.value });
   };
 
-  getFiltredContact = () => {
+  getFilteredContact = () => {
     const { filter, contacts } = this.state;
     const normalizedFilter = filter.toLowerCase();
 
@@ -49,7 +50,7 @@ class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
-    const filtredContacts = this.getFiltredContact();
+    const filtredContacts = this.getFilteredContact();
 
     return (
       <>
@@ -58,16 +59,17 @@ class App extends Component {
           contacts={contacts}
           onSubmit={this.addContact}
         />
-        <Filter
-          title="Find contacts by name"
-          value={filter}
-          onChange={this.changeFilter}
-        />
-        <Contacts
-          title="Contacts"
-          contacts={filtredContacts}
-          onDeleteContact={this.deleteContact}
-        />
+        <Contacts title="Contacts">
+          <Filter
+            title="Find contacts by name"
+            value={filter}
+            onChange={this.changeFilter}
+          />
+          <ContactsList
+            contacts={filtredContacts}
+            onDeleteContact={this.deleteContact}
+          />
+        </Contacts>
       </>
     );
   }
