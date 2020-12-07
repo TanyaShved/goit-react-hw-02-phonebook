@@ -47,12 +47,9 @@ class Phonebook extends Component {
     const { name } = this.state;
     const { contacts } = this.props;
 
-    const namesInPhonebook = contacts.reduce(
-      (acc, contact) => [...acc, contact.name],
-      [],
-    );
+    const namesInPhonebook = contacts.find(contact => contact.name === name);
 
-    if (namesInPhonebook.includes(name)) {
+    if (namesInPhonebook) {
       alert(`${name} is already in contacts!`);
       return true;
     }
@@ -60,9 +57,11 @@ class Phonebook extends Component {
 
   render() {
     const { name, number } = this.state;
+    const { title } = this.props;
+
     return (
       <div>
-        <h2 className={s.title}>{this.props.title}</h2>
+        <h2 className={s.title}>{title}</h2>
         <form onSubmit={this.handeleSubmit} className={s.container}>
           <label className={s.textInput}>
             Name
@@ -81,7 +80,7 @@ class Phonebook extends Component {
               type="number"
               value={number}
               name="number"
-              placeholder="459-12-56"
+              placeholder="4591256"
               onChange={this.handeleChange}
               className={s.formInput_phone}
             />
