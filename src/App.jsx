@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import Pnonebook from './components/Phonebook/Phonebook';
-import Contacts from './components/Contacts/Contacts';
-import Filter from './components/Filter/Filter';
-import ContactsList from './components/ContactsList/ContactsList';
+import Pnonebook from './tanya/Phonebook/Phonebook';
+import Contacts from './tanya/Contacts/Contacts';
+import Filter from './tanya/Filter/Filter';
+import ContactsList from './tanya/ContactsList/ContactsList';
 
 class App extends Component {
   state = {
